@@ -1,56 +1,36 @@
+# TNT Dental — CloudCannon CMS Configuration
+
+paths:
+  static: public
+  uploads: public/uploads
+
+timezone: America/New_York
+
+markdown:
+  engine: commonmark
+  options:
+    gfm: true
+
+build:
+  install_command: npm install
+  build_command: npm run build
+  output: dist
+
 collections_config:
   site:
     path: src/content
     name: Site Settings
     icon: settings
-    _editables:
-      - name: practiceName
-        label: Practice Name
-      - name: tagline
-        label: Hero Tagline
-      - name: subtext
-        label: Hero Subtext
-      - name: phone
-        label: Phone Number
-      - name: email
-        label: Email Address
-      - name: address
-        label: Address
-      - name: hours
-        label: Office Hours
-      - name: acceptingPatients
-        label: Accepting New Patients
-        comment: Toggle the "Now Accepting New Patients" badge on the hero
-      - name: googleRating
-        label: Google Rating
-      - name: reviewCount
-        label: Number of Reviews
-      - name: patientCount
-        label: Total Patients Served
-      - name: yearsInPractice
-        label: Years in Practice
 
   services:
     path: src/content
     name: Services
     icon: list
-    _editables:
-      - name: title
-        label: Service Name
-      - name: description
-        label: Description
 
   team:
     path: src/content
     name: Team Members
     icon: person
-    _editables:
-      - name: name
-        label: Full Name
-      - name: role
-        label: Job Title
-      - name: bio
-        label: Bio
 
 data_config:
   site:
@@ -60,7 +40,6 @@ data_config:
   team:
     path: src/content/team.json
 
-# Global editor settings
 _inputs:
   acceptingPatients:
     type: checkbox
