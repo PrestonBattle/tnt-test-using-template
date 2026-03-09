@@ -1,0 +1,51 @@
+---
+interface Props {
+  team: {
+    name: string
+    role: string
+    bio: string
+  }[]
+}
+
+const { team } = Astro.props
+---
+
+<section id="team" class="py-28 px-6 bg-[var(--color-offwhite)]">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="max-w-lg mb-14">
+      <p class="text-xs font-semibold tracking-widest uppercase text-[var(--color-teal)] mb-2">
+        Our Team
+      </p>
+      <h2 class="font-display text-4xl font-bold text-[var(--color-navy)] leading-tight mb-3">
+        Meet Your Dental Family
+      </h2>
+      <p class="text-[var(--color-gray)] text-base leading-relaxed">
+        A dedicated team of specialists committed to your comfort and care.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {team.map(member => (
+        <div class="bg-white border border-[var(--color-gray-light)] rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1">
+
+          <!-- Photo placeholder -->
+          <div class="h-32 bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-teal)] flex items-center justify-center">
+            <span class="text-white/30 text-xs font-semibold tracking-widest uppercase">Photo</span>
+          </div>
+
+          <!-- Info -->
+          <div class="p-5">
+            <h3 class="font-bold text-[var(--color-navy)] text-sm mb-1">{member.name}</h3>
+            <p class="text-[var(--color-teal)] text-xs font-semibold mb-3">{member.role}</p>
+            <p class="text-[var(--color-gray)] text-xs leading-relaxed">{member.bio}</p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,119 @@
+---
+import Button from '../ui/Button.astro'
+import Badge from '../ui/Badge.astro'
+
+interface Props {
+  practiceName: string
+  tagline: string
+  subtext: string
+  phone: string
+  googleRating: string
+  reviewCount: string
+  patientCount: string
+  yearsInPractice: string
+  acceptingPatients: boolean
+  services: { title: string }[]
+}
+
+const {
+  practiceName,
+  tagline,
+  subtext,
+  phone,
+  googleRating,
+  reviewCount,
+  patientCount,
+  yearsInPractice,
+  acceptingPatients,
+  services,
+} = Astro.props
+---
+
+<section class="bg-[var(--color-navy)] min-h-[90vh] flex items-center relative overflow-hidden py-20 px-6">
+
+  <!-- Background glow -->
+  <div class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(0,191,166,0.12) 0%, transparent 65%);">
+  </div>
+
+  <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
+
+    <!-- Left: Content -->
+    <div>
+      {acceptingPatients && (
+        <div class="mb-6">
+          <Badge label="Now Accepting New Patients" variant="teal" />
+        </div>
+      )}
+
+      <h1 class="font-display text-4xl md:text-6xl font-black text-white leading-tight mb-5">
+        {tagline.split(' ').slice(0, 3).join(' ')}
+        <span class="text-[var(--color-teal)]"> {tagline.split(' ').slice(3).join(' ')}</span>
+      </h1>
+
+      <p class="text-white/60 text-lg leading-relaxed mb-8 max-w-md">
+        {subtext}
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <Button label="Book Appointment" href="#contact" variant="primary" size="lg" />
+        <Button label="Our Services" href="#services" variant="ghost" size="lg" />
+      </div>
+
+      <!-- Trust bar -->
+      <div class="mt-10 flex items-center gap-3">
+        <div class="flex text-[var(--color-gold)] text-sm tracking-wider">
+          &#9733;&#9733;&#9733;&#9733;&#9733;
+        </div>
+        <span class="text-white/50 text-sm">
+          <strong class="text-white/80">{googleRating} rating</strong> across {reviewCount} reviews
+        </span>
+      </div>
+    </div>
+
+    <!-- Right: Card -->
+    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 flex flex-col gap-5">
+
+      <h2 class="font-display text-xl font-bold text-white">Request an Appointment</h2>
+
+      <input
+        type="text"
+        placeholder="Your name"
+        class="w-full px-4 py-3 rounded-lg bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm outline-none focus:border-[var(--color-teal)]"
+      />
+      <input
+        type="tel"
+        placeholder="Phone number"
+        class="w-full px-4 py-3 rounded-lg bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm outline-none focus:border-[var(--color-teal)]"
+      />
+
+      <select class="w-full px-4 py-3 rounded-lg bg-[var(--color-navy-mid)] border border-white/15 text-white/60 text-sm outline-none">
+        <option value="">Select a service...</option>
+        {services.map(s => (
+          <option value={s.title}>{s.title}</option>
+        ))}
+      </select>
+
+      <Button label="Request Appointment" href="#" variant="primary" size="md" />
+
+      <p class="text-white/30 text-xs text-center">We will call to confirm within 2 hours</p>
+
+      <!-- Stats row -->
+      <div class="grid grid-cols-3 gap-3 pt-2 border-t border-white/10">
+        <div class="text-center">
+          <div class="font-display text-2xl font-bold text-[var(--color-teal)]">{googleRating}★</div>
+          <div class="text-white/40 text-xs uppercase tracking-wide mt-1">Rating</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display text-2xl font-bold text-[var(--color-teal)]">{yearsInPractice}</div>
+          <div class="text-white/40 text-xs uppercase tracking-wide mt-1">Years</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display text-2xl font-bold text-[var(--color-teal)]">{patientCount}</div>
+          <div class="text-white/40 text-xs uppercase tracking-wide mt-1">Patients</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

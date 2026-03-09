@@ -1,0 +1,19 @@
+{
+  "practiceName": "BrightSmiles Dental",
+  "tagline": "Award-Winning Dental Care in Your Neighborhood",
+  "subtext": "Comprehensive, compassionate dental services for the whole family. Same-week appointments available.",
+  "phone": "(512) 555-0182",
+  "email": "hello@brightsmilesdental.com",
+  "address": "123 Maple Street, Austin, TX 78701",
+  "hours": "Mon-Fri 8am-6pm, Sat 9am-2pm",
+  "acceptingPatients": true,
+  "googleRating": "4.9",
+  "reviewCount": "280+",
+  "patientCount": "3,000+",
+  "yearsInPractice": "15+",
+  "theme": {
+    "teal": "#00BFA6",
+    "navy": "#0B1F3A",
+    "gold": "#F5A623"
+  }
+}

@@ -1,0 +1,119 @@
+---
+import Button from '../ui/Button.astro'
+
+interface Props {
+  practiceName: string
+  phone: string
+  email: string
+  address: string
+  hours: string
+  services: { title: string }[]
+}
+
+const { practiceName, phone, email, address, hours, services } = Astro.props
+---
+
+<section id="contact" class="py-28 px-6 bg-[var(--color-white)]">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+
+    <!-- Left: Info -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-[var(--color-teal)] mb-2">
+        Get in Touch
+      </p>
+      <h2 class="font-display text-4xl font-bold text-[var(--color-navy)] leading-tight mb-5">
+        We Would Love to <br />Hear From You
+      </h2>
+      <p class="text-[var(--color-gray)] text-base leading-relaxed mb-8">
+        Ready to schedule your first visit or have a question? We are here to help — reach out any way that is convenient for you.
+      </p>
+
+      <!-- Details -->
+      <div class="flex flex-col gap-5">
+        {[
+          { label: 'Address',  value: address },
+          { label: 'Phone',    value: phone   },
+          { label: 'Email',    value: email   },
+          { label: 'Hours',    value: hours   },
+        ].map(detail => (
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg bg-[var(--color-teal-light)] flex items-center justify-center flex-shrink-0">
+              <span class="w-2 h-2 rounded-full bg-[var(--color-teal)] block"></span>
+            </div>
+            <div>
+              <p class="text-xs text-[var(--color-gray)] mb-1">{detail.label}</p>
+              <p class="text-sm font-semibold text-[var(--color-navy)]">{detail.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="bg-white border border-[var(--color-gray-light)] rounded-3xl p-10 shadow-[var(--shadow-card)]">
+      <h3 class="font-display text-2xl font-bold text-[var(--color-navy)] mb-8">
+        Request an Appointment
+      </h3>
+
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-xs font-semibold text-[var(--color-navy)] mb-1 tracking-wide">
+            First Name
+          </label>
+          <input
+            type="text"
+            placeholder="Jane"
+            class="w-full px-4 py-3 border-2 border-[var(--color-gray-light)] rounded-lg text-sm font-body text-[var(--color-navy)] outline-none focus:border-[var(--color-teal)] transition-colors"
+          />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-[var(--color-navy)] mb-1 tracking-wide">
+            Last Name
+          </label>
+          <input
+            type="text"
+            placeholder="Smith"
+            class="w-full px-4 py-3 border-2 border-[var(--color-gray-light)] rounded-lg text-sm font-body text-[var(--color-navy)] outline-none focus:border-[var(--color-teal)] transition-colors"
+          />
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-xs font-semibold text-[var(--color-navy)] mb-1 tracking-wide">
+          Phone Number
+        </label>
+        <input
+          type="tel"
+          placeholder="(555) 000-0000"
+          class="w-full px-4 py-3 border-2 border-[var(--color-gray-light)] rounded-lg text-sm font-body text-[var(--color-navy)] outline-none focus:border-[var(--color-teal)] transition-colors"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-xs font-semibold text-[var(--color-navy)] mb-1 tracking-wide">
+          Service Needed
+        </label>
+        <select class="w-full px-4 py-3 border-2 border-[var(--color-gray-light)] rounded-lg text-sm text-[var(--color-gray)] outline-none focus:border-[var(--color-teal)] transition-colors appearance-none bg-white">
+          <option value="">Select a service...</option>
+          {services.map(s => (
+            <option value={s.title}>{s.title}</option>
+          ))}
+        </select>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-xs font-semibold text-[var(--color-navy)] mb-1 tracking-wide">
+          Message (optional)
+        </label>
+        <textarea
+          placeholder="Any additional details or questions..."
+          rows="3"
+          class="w-full px-4 py-3 border-2 border-[var(--color-gray-light)] rounded-lg text-sm font-body text-[var(--color-navy)] outline-none focus:border-[var(--color-teal)] transition-colors resize-none"
+        ></textarea>
+      </div>
+
+      <Button label="Send Request →" variant="primary" size="lg" />
+    </div>
+
+  </div>
+</section>

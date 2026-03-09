@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* ============================================
+   FONTS
+   ============================================ */
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ============================================
+   TNT DENTAL DESIGN TOKENS
+   ============================================ */
+:root {
+  /* Brand Colors */
+  --color-navy:        #0B1F3A;
+  --color-navy-mid:    #132d52;
+  --color-teal:        #00BFA6;
+  --color-teal-light:  #e0faf7;
+  --color-gold:        #F5A623;
+  --color-white:       #FAFCFF;
+  --color-offwhite:    #F2F5F9;
+  --color-gray:        #6B7A8F;
+  --color-gray-light:  #DDE3EC;
+
+  /* Shadows */
+  --shadow-card:     0 4px 24px rgba(11,31,58,0.08);
+  --shadow-elevated: 0 12px 40px rgba(11,31,58,0.14);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-white);
+  color: var(--color-navy);
+  line-height: 1.6;
+  overflow-x: hidden;
+}

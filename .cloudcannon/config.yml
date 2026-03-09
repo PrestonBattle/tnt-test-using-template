@@ -1,0 +1,78 @@
+collections_config:
+  site:
+    path: src/content
+    name: Site Settings
+    icon: settings
+    _editables:
+      - name: practiceName
+        label: Practice Name
+      - name: tagline
+        label: Hero Tagline
+      - name: subtext
+        label: Hero Subtext
+      - name: phone
+        label: Phone Number
+      - name: email
+        label: Email Address
+      - name: address
+        label: Address
+      - name: hours
+        label: Office Hours
+      - name: acceptingPatients
+        label: Accepting New Patients
+        comment: Toggle the "Now Accepting New Patients" badge on the hero
+      - name: googleRating
+        label: Google Rating
+      - name: reviewCount
+        label: Number of Reviews
+      - name: patientCount
+        label: Total Patients Served
+      - name: yearsInPractice
+        label: Years in Practice
+
+  services:
+    path: src/content
+    name: Services
+    icon: list
+    _editables:
+      - name: title
+        label: Service Name
+      - name: description
+        label: Description
+
+  team:
+    path: src/content
+    name: Team Members
+    icon: person
+    _editables:
+      - name: name
+        label: Full Name
+      - name: role
+        label: Job Title
+      - name: bio
+        label: Bio
+
+data_config:
+  site:
+    path: src/content/site.json
+  services:
+    path: src/content/services.json
+  team:
+    path: src/content/team.json
+
+# Global editor settings
+_inputs:
+  acceptingPatients:
+    type: checkbox
+  tagline:
+    type: text
+    comment: Keep this under 8 words for best display
+  subtext:
+    type: textarea
+  bio:
+    type: textarea
+  description:
+    type: textarea
+  hours:
+    type: text
+    comment: e.g. Mon-Fri 8am-6pm, Sat 9am-2pm

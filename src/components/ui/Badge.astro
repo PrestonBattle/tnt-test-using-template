@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string
+  variant?: 'teal' | 'gold' | 'navy'
+}
+
+const { label, variant = 'teal' } = Astro.props
+
+const variants = {
+  teal: 'bg-[var(--color-teal-light)] text-[#009e8a]',
+  gold: 'bg-[#fff8eb] text-[#c97f00]',
+  navy: 'bg-[rgba(11,31,58,0.08)] text-[var(--color-navy)]',
+}
+---
+
+<span class={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold tracking-wide ${variants[variant]}`}>
+  <span class="text-[0.5rem]">&#9679;</span>
+  {label}
+</span>

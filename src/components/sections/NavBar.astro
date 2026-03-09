@@ -1,0 +1,49 @@
+---
+import Button from '../ui/Button.astro'
+
+interface Props {
+  practiceName: string
+  links?: { label: string; href: string }[]
+  ctaLabel?: string
+  ctaHref?: string
+}
+
+const {
+  practiceName,
+  links = [
+    { label: 'Services', href: '#services' },
+    { label: 'About',    href: '#about' },
+    { label: 'Team',     href: '#team' },
+    { label: 'Contact',  href: '#contact' },
+  ],
+  ctaLabel = 'Book Now',
+  ctaHref  = '#contact',
+} = Astro.props
+
+const [first, ...rest] = practiceName.split(' ')
+---
+
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-gray-light)]">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="/" class="font-display text-xl font-bold text-[var(--color-navy)]">
+      {first}<span class="text-[var(--color-teal)]">{rest.join(' ')}</span>
+    </a>
+
+    <!-- Links -->
+    <ul class="hidden md:flex items-center gap-8 list-none">
+      {links.map(link => (
+        <li>
+          <a href={link.href} class="text-sm font-medium text-[var(--color-gray)] hover:text-[var(--color-navy)] transition-colors duration-150">
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA -->
+    <Button label={ctaLabel} href={ctaHref} variant="primary" size="sm" />
+
+  </div>
+</nav>

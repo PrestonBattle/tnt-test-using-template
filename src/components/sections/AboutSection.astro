@@ -1,0 +1,97 @@
+---
+import Button from '../ui/Button.astro'
+
+interface Props {
+  yearsInPractice: string
+  patientCount: string
+  practiceName: string
+}
+
+const { yearsInPractice, patientCount, practiceName } = Astro.props
+---
+
+<section id="about" class="py-28 px-6 bg-[var(--color-white)]">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+
+    <!-- Left: Visual card -->
+    <div class="bg-[var(--color-navy)] rounded-3xl p-10 relative overflow-hidden">
+
+      <!-- Decorative circle -->
+      <div class="absolute -bottom-8 -right-8 w-48 h-48 rounded-full border-[40px] border-white/5 pointer-events-none"></div>
+
+      <p class="text-xs font-semibold tracking-widest uppercase text-[var(--color-teal)] mb-8">
+        By the Numbers
+      </p>
+
+      <!-- Metric 1 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-5 mb-4">
+        <div class="font-display text-4xl font-black text-[var(--color-teal)] min-w-[80px]">
+          {yearsInPractice}
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm">Years in Practice</h4>
+          <p class="text-white/40 text-xs mt-1">Serving our community since 2010</p>
+        </div>
+      </div>
+
+      <!-- Metric 2 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-5 mb-4">
+        <div class="font-display text-4xl font-black text-[var(--color-teal)] min-w-[80px]">
+          {patientCount}
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm">Patients Treated</h4>
+          <p class="text-white/40 text-xs mt-1">Families trust us every year</p>
+        </div>
+      </div>
+
+      <!-- Metric 3 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-5">
+        <div class="font-display text-4xl font-black text-[var(--color-teal)] min-w-[80px]">
+          98%
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm">Satisfaction Rate</h4>
+          <p class="text-white/40 text-xs mt-1">From post-visit surveys</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Content -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-[var(--color-teal)] mb-2">
+        Our Story
+      </p>
+      <h2 class="font-display text-4xl font-bold text-[var(--color-navy)] leading-tight mb-5">
+        Dentistry Built Around <span class="text-[var(--color-teal)]">You</span>
+      </h2>
+      <p class="text-[var(--color-gray)] text-base leading-relaxed mb-4">
+        {practiceName} was founded on a simple belief: every patient deserves to feel heard, cared for, and confident when they leave our office.
+      </p>
+      <p class="text-[var(--color-gray)] text-base leading-relaxed mb-6">
+        Our team combines cutting-edge technology with genuine warmth to deliver an experience unlike any other dental practice in the area.
+      </p>
+
+      <!-- Checklist -->
+      <ul class="flex flex-col gap-3 mb-8">
+        {[
+          'State-of-the-art digital X-rays and 3D imaging',
+          'Same-day emergency appointments available',
+          'Flexible financing and all major insurance plans',
+          'Evening and weekend hours for busy families',
+        ].map(item => (
+          <li class="flex items-center gap-3 text-sm font-medium text-[var(--color-navy)]">
+            <span class="w-5 h-5 rounded-full bg-[var(--color-teal-light)] text-[var(--color-teal)] text-xs font-black flex items-center justify-center flex-shrink-0">
+              ✓
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      <Button label="Meet the Team" href="#team" variant="primary" size="md" />
+    </div>
+
+  </div>
+</section>

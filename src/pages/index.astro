@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro'
+import NavBar from '../components/sections/NavBar.astro'
+import HeroSection from '../components/sections/HeroSection.astro'
+import ServicesSection from '../components/sections/ServicesSection.astro'
+import AboutSection from '../components/sections/AboutSection.astro'
+import TeamSection from '../components/sections/TeamSection.astro'
+import ContactSection from '../components/sections/ContactSection.astro'
+import CTABanner from '../components/sections/CTABanner.astro'
+
+import site from '../content/site.json'
+import services from '../content/services.json'
+import team from '../content/team.json'
+---
+
+<Layout title={site.practiceName}>
+  <NavBar
+    practiceName={site.practiceName}
+  />
+  <HeroSection
+    practiceName={site.practiceName}
+    tagline={site.tagline}
+    subtext={site.subtext}
+    phone={site.phone}
+    googleRating={site.googleRating}
+    reviewCount={site.reviewCount}
+    patientCount={site.patientCount}
+    yearsInPractice={site.yearsInPractice}
+    acceptingPatients={site.acceptingPatients}
+    services={services}
+  />
+  <ServicesSection
+    services={services}
+  />
+  <AboutSection
+    practiceName={site.practiceName}
+    yearsInPractice={site.yearsInPractice}
+    patientCount={site.patientCount}
+  />
+  <TeamSection
+    team={team}
+  />
+  <ContactSection
+    practiceName={site.practiceName}
+    phone={site.phone}
+    email={site.email}
+    address={site.address}
+    hours={site.hours}
+    services={services}
+  />
+  <CTABanner
+    phone={site.phone}
+  />
+</Layout>

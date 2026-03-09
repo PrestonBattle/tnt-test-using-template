@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Dr. Michael Chen",
+    "role": "Lead Dentist & Founder",
+    "bio": "15 years experience, specializing in cosmetic and restorative dentistry."
+  },
+  {
+    "name": "Dr. Priya Sharma",
+    "role": "Pediatric Specialist",
+    "bio": "Certified pediatric dentist with a gift for making kids feel safe and comfortable."
+  },
+  {
+    "name": "Dr. James Rivera",
+    "role": "Orthodontist",
+    "bio": "Invisalign-certified with 10 years of smile transformation experience."
+  },
+  {
+    "name": "Maria Lopez",
+    "role": "Patient Coordinator",
+    "bio": "Bilingual coordinator who makes scheduling and insurance straightforward."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "General Dentistry",
+    "description": "Routine cleanings, fillings, and preventive care to keep your smile healthy year-round."
+  },
+  {
+    "title": "Cosmetic Dentistry",
+    "description": "Veneers, bonding, and whitening treatments designed to give you a confident smile."
+  },
+  {
+    "title": "Invisalign",
+    "description": "Straighten your teeth discreetly with custom clear aligners. Fast, comfortable results."
+  },
+  {
+    "title": "Restorative Care",
+    "description": "Implants, crowns, and bridges to restore full function and aesthetics to damaged teeth."
+  },
+  {
+    "title": "Pediatric Dentistry",
+    "description": "Gentle, friendly care for kids of all ages in a calm, welcoming environment."
+  },
+  {
+    "title": "Emergency Dental",
+    "description": "Same-day emergency appointments available. We're here when you need us most."
+  }
+]

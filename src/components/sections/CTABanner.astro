@@ -1,0 +1,40 @@
+---
+import Button from '../ui/Button.astro'
+import Badge from '../ui/Badge.astro'
+
+interface Props {
+  phone: string
+}
+
+const { phone } = Astro.props
+---
+
+<section class="bg-[var(--color-navy)] py-28 px-6 relative overflow-hidden">
+
+  <!-- Background glow -->
+  <div class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,191,166,0.15) 0%, transparent 70%);">
+  </div>
+
+  <div class="max-w-2xl mx-auto text-center relative z-10">
+
+    <div class="mb-6 flex justify-center">
+      <Badge label="Limited Spots Available" variant="teal" />
+    </div>
+
+    <h2 class="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-4">
+      Ready for a <span class="text-[var(--color-teal)]">Brighter Smile?</span>
+    </h2>
+
+    <p class="text-white/55 text-lg mb-10">
+      New patient specials available. Same-week appointments open now.
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button label="Book Appointment →" href="#contact" variant="primary" size="lg" />
+      <Button label={`Call ${phone}`} href={`tel:${phone}`} variant="ghost" size="lg" />
+    </div>
+
+  </div>
+
+</section>
