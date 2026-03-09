@@ -11,10 +11,13 @@ markdown:
   options:
     gfm: true
 
-build:
-  install_command: npm install
-  build_command: npm run build
-  output: dist
+data_config:
+  site:
+    path: src/content/site.json
+  services:
+    path: src/content/services.json
+  team:
+    path: src/content/team.json
 
 collections_config:
   site:
@@ -31,14 +34,6 @@ collections_config:
     path: src/content
     name: Team Members
     icon: person
-
-data_config:
-  site:
-    path: src/content/site.json
-  services:
-    path: src/content/services.json
-  team:
-    path: src/content/team.json
 
 _inputs:
   acceptingPatients:
