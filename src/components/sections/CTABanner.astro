@@ -1,5 +1,4 @@
 ---
-import Button from '../ui/Button.astro'
 import Badge from '../ui/Badge.astro'
 
 interface Props {
@@ -31,8 +30,6 @@ const { phone } = Astro.props
     </p>
 
     <div class="flex flex-wrap gap-4 justify-center">
-      <Button label="Book Appointment →" href="#contact" variant="primary" size="lg" />
-      <Button label={`Call ${phone}`} href={`tel:${phone}`} variant="ghost" size="lg" />
     </div>
 
   </div>
