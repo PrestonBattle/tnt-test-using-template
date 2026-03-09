@@ -1,4 +1,5 @@
 # TNT Dental — CloudCannon CMS Configuration
+source: ''
 
 paths:
   static: public
