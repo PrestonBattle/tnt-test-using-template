@@ -1,5 +1,5 @@
 # TNT Dental — CloudCannon CMS Configuration
-source: ''
+source: 'src'
 
 paths:
   static: public
@@ -14,25 +14,25 @@ markdown:
 
 data_config:
   site:
-    path: src/content/site.json
+    path: /content/site.json
   services:
-    path: src/content/services.json
+    path: /content/services.json
   team:
-    path: src/content/team.json
+    path: /content/team.json
 
 collections_config:
   site:
-    path: src/content
+    path: /content
     name: Site Settings
     icon: settings
 
   services:
-    path: src/content
+    path: /content
     name: Services
     icon: list
 
   team:
-    path: src/content
+    path: /content
     name: Team Members
     icon: person
 
